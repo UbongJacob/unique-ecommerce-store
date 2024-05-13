@@ -1,35 +1,35 @@
 <script setup lang="ts">
-import {
-  Table,
-  TableBody,
-  TableCaption,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from "@/components/ui/table";
-import AddTransactionSheet from "./components/custom/AddTransactionSheet.vue";
+// import {
+//   Table,
+//   TableBody,
+//   TableCaption,
+//   TableCell,
+//   TableHead,
+//   TableHeader,
+//   TableRow,
+// } from "@/components/ui/table";
+// import AddTransactionSheet from "./components/custom/AddTransactionSheet.vue";
 
-import { liveQuery } from "dexie";
-import { useObservable } from "@vueuse/rxjs";
-import { ICartDB, dexieDB } from "./dexie/db";
-import Button from "./components/ui/button/Button.vue";
+// import { liveQuery } from "dexie";
+// import { useObservable } from "@vueuse/rxjs";
+// import { ICartDB, dexieDB } from "./dexie/db";
+// import Button from "./components/ui/button/Button.vue";
 
-const transactions = useObservable<ICartDB[]>(
-  // @ts-ignore
-  liveQuery(() => dexieDB.transactions.toArray())
-);
+// const transactions = useObservable<ICartDB[]>(
+//   // @ts-ignore
+//   liveQuery(() => dexieDB.transactions.toArray())
+// );
 
-const handleDeleteAll = async () => {
-  console.log("delete start");
-  const result = await dexieDB.transactions.where("id").notEqual(-1).delete();
-  console.log({ deleteResult: result });
-};
+// const handleDeleteAll = async () => {
+//   console.log("delete start");
+//   const result = await dexieDB.transactions.where("id").notEqual(-1).delete();
+//   console.log({ deleteResult: result });
+// };
 </script>
 
 <template>
   <div class="container p-10 max-w-7xl mx-auto">
-    <div class="flex items-center justify-between">
+    <!-- <div class="flex items-center justify-between">
       <Button :onclick="handleDeleteAll" variant="destructive">
         Delete all
       </Button>
@@ -58,6 +58,6 @@ const handleDeleteAll = async () => {
           </TableCell>
         </TableRow>
       </TableBody>
-    </Table>
+    </Table> -->
   </div>
 </template>
